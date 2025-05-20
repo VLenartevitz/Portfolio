@@ -887,24 +887,31 @@ a {
     justify-content: center;
 }
 
+/* Substitua o código atual do slide por este: */
 .slide {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
+    display: flex; /* Adicionado */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: auto; /* Remove o width: 100% que força o esticamento */
+    height: auto; /* Mantém proporção */
+    max-width: 100%; /* Limita largura ao container */
+    max-height: 100%; /* Limita altura ao container */
+    object-fit: contain; /* Mantém proporção sem cortar */
     display: flex;
     align-items: center;
     justify-content: center;
     transition: opacity 1s ease-in-out;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%; /* Centraliza */
+    left: 50%; /* Centraliza */
+    transform: translate(-50%, -50%); /* Ajuste fino de centralização */
     opacity: 0;
 }
 
